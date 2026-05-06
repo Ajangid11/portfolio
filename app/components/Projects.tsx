@@ -51,6 +51,16 @@ export const projects: Project[] = [
         mockupLines: [],
         image: "/fleet-logistics.png"
     },
+    {
+        title: "HireHub — Job Management",
+        desc: "A streamlined recruitment platform designed for efficient job posting management, candidate tracking, and workflow automation. Features a clean, intuitive admin dashboard.",
+        tags: ["Next.js", "PostgreSQL", "Prisma"],
+        emoji: "💼",
+        gradient: "linear-gradient(135deg, rgba(232,168,184,0.2) 0%, rgba(255,191,168,0.2) 100%)",
+        accent: "#E8A8B8",
+        mockupLines: [],
+        image: "/job-portal.png"
+    },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
