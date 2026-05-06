@@ -565,9 +565,15 @@ function HeroSection() {
                 {/* LEFT */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
                     {/* Availability badge */}
-                    <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,158,190,0.12)', border: '1.5px solid rgba(255,158,190,0.3)', borderRadius: 999, padding: '6px 16px', width: 'fit-content' }}>
-                        <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 8px #4ADE80', display: 'block' }} />
-                        <span style={{ fontSize: 12, fontWeight: 500, color: '#64748B', letterSpacing: '0.02em' }}>Available for opportunities ✨</span>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
+                        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,158,190,0.12)', border: '1.5px solid rgba(255,158,190,0.3)', borderRadius: 999, padding: '6px 16px', width: 'fit-content' }}>
+                            <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 8px #4ADE80', display: 'block' }} />
+                            <span style={{ fontSize: 12, fontWeight: 500, color: '#64748B', letterSpacing: '0.02em' }}>Available for opportunities ✨</span>
+                        </div>
+                        <a href="https://www.maitriiinfotech.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600, color: '#FF9EBE', textDecoration: 'none', background: 'white', padding: '6px 16px', borderRadius: 999, border: '1.5px solid #FF9EBE', boxShadow: '0 4px 12px rgba(255,158,190,0.15)', transition: 'all 0.2s' }}>
+                            <span>Building @ Maitrii Infotech</span>
+                            <span style={{ fontSize: 14 }}>🌐</span>
+                        </a>
                     </div>
 
                     <div>

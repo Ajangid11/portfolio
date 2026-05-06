@@ -15,33 +15,6 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        title: "Bloom — AI Journaling",
-        desc: "A pastel-aesthetic AI-powered journaling app with mood tracking, sentiment analysis, and guided affirmations. Built with React + OpenAI.",
-        tags: ["React", "OpenAI", "Tailwind"],
-        emoji: "🌸",
-        gradient: "linear-gradient(135deg, rgba(255,158,190,0.25) 0%, rgba(216,180,232,0.25) 100%)",
-        accent: "#FF9EBE",
-        mockupLines: ["#FF9EBE", "#D8B4E8", "#FFBFA8", "#E8A8B8"],
-    },
-    {
-        title: "Stardust — Dev Portfolio",
-        desc: "A generative art portfolio generator using Three.js particle systems. Each visitor gets a unique starfield based on their GitHub stats.",
-        tags: ["Three.js", "GSAP", "Next.js"],
-        emoji: "✨",
-        gradient: "linear-gradient(135deg, rgba(216,180,232,0.25) 0%, rgba(97,218,251,0.15) 100%)",
-        accent: "#D8B4E8",
-        mockupLines: ["#D8B4E8", "#61DAFB", "#C084E8", "#A8D8FF"],
-    },
-    {
-        title: "Sakura — E-Commerce UI",
-        desc: "A full-stack fashion e-commerce platform with AR try-on feature, real-time inventory, and seamless checkout flow.",
-        tags: ["Next.js", "Stripe", "MongoDB"],
-        emoji: "🛍️",
-        gradient: "linear-gradient(135deg, rgba(255,191,168,0.25) 0%, rgba(232,168,184,0.25) 100%)",
-        accent: "#FFBFA8",
-        mockupLines: ["#FFBFA8", "#E8A8B8", "#FDD", "#FFD700"],
-    },
-    {
         title: "FleetTrack — Logistics ERP",
         desc: "A powerful fleet and logistics management system featuring real-time GPS tracking, automated dispatching, and comprehensive booking workflows. Built for high-scale operations.",
         tags: ["React", "Node.js", "MongoDB", "Maps"],
