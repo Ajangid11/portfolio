@@ -48,6 +48,17 @@ export const projects: Project[] = [
         image: "/doctor-for.png",
         url: "https://doctor-for.vercel.app/"
     },
+    {
+        title: "Maitrii Infotech — Agency",
+        desc: "The official corporate presence for Maitrii Infotech, highlighting our suite of digital solutions, technological expertise, and commitment to delivering excellence for clients worldwide.",
+        tags: ["HTML", "CSS", "JS", "SEO"],
+        emoji: "🏢",
+        gradient: "linear-gradient(135deg, rgba(165,180,252,0.2) 0%, rgba(199,210,254,0.2) 100%)",
+        accent: "#6366F1",
+        mockupLines: [],
+        image: "/maitrii-web.png",
+        url: "https://www.maitriiinfotech.com/"
+    },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
