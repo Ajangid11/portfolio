@@ -572,7 +572,9 @@ function Navbar({ scrolled }: { scrolled: boolean }) {
     return (
         <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg,#FF9EBE,#D8B4E8)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16 }}>✨</div>
+                <div style={{ width: 40, height: 40, borderRadius: '50%', overflow: 'hidden', border: '2px solid var(--pink)', boxShadow: 'var(--glow-pink)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <img src="/profile.jpg" alt="Anjali" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
                 <span className="serif" style={{ fontSize: 17, fontWeight: 700, color: '#1E293B', letterSpacing: '-0.02em' }}>Anjali.dev</span>
             </div>
             <ul className="nav-links">
@@ -637,8 +639,9 @@ function HeroSection() {
                 <div style={{ display: 'flex', justifyContent: 'center', position: 'relative' }}>
                     {/* Glow blob */}
                     <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: 340, height: 340, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,158,190,0.22) 0%, rgba(216,180,232,0.16) 50%, transparent 70%)', filter: 'blur(30px)', zIndex: 0 }} />
-                    <div className="float" style={{ position: 'relative', zIndex: 1, width: '100%', maxWidth: 420 }}>
-                        <CoderGirlIllustration />
+                    <div style={{ position: 'relative', width: '100%', maxWidth: 420, aspectRatio: '1/1', borderRadius: '42px', overflow: 'hidden', border: '3px solid white', boxShadow: 'var(--shadow-pink)', animation: 'float 6s ease-in-out infinite' }}>
+                        <img src="/profile.jpg" alt="Anjali Jangid" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 60%, rgba(255,158,190,0.2))', pointerEvents: 'none' }} />
                     </div>
                     {/* Floating tags */}
                     <div className="glass float2" style={{ position: 'absolute', top: '8%', right: '-5%', padding: '10px 16px', borderRadius: 16, fontSize: 13, fontWeight: 600, color: '#1E293B', animationDelay: '0.5s', zIndex: 2 }}>
