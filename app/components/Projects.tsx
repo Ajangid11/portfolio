@@ -116,11 +116,11 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
     return (
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: 52, gap: 24 }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: 52 }}>
                     <div style={{ position: 'relative', padding: '30px 0', width: '100%' }}>
                         {/* Heading decorative background */}
-                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '450px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
-                        
+                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '430px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
+
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: '#D8B4E8', marginBottom: 12, position: 'relative', zIndex: 1 }}>
                             <span>✦</span>
                             <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>PORTFOLIO</span>
@@ -130,11 +130,14 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
                             Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
                         </h2>
                     </div>
-                    <a className="btn-outline" href="#" style={{ fontSize: 13 }}>View All Projects →</a>
                 </div>
 
-                <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 24 }}>
+                <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 24, marginBottom: 32 }}>
                     {projects.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
+                </div>
+
+                <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <a className="btn-outline" href="#" style={{ fontSize: 13 }}>View All Projects →</a>
                 </div>
             </div>
         </section>
