@@ -116,17 +116,21 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
     return (
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52, flexWrap: 'wrap', gap: 20 }}>
-                    <div style={{ position: 'relative' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: 52, gap: 24 }}>
+                    <div style={{ position: 'relative', padding: '20px 0', width: '100%' }}>
                         {/* Heading decorative background */}
-                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '-40px', top: '50%', transform: 'translateY(-50%)', height: '160%', opacity: 0.12, zIndex: -1, pointerEvents: 'none', filter: 'blur(2px)' }} />
+                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '420px', maxWidth: '95vw', opacity: 0.9, zIndex: -1, pointerEvents: 'none' }} />
                         
-                        <span style={{ display: 'inline-block', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#D8B4E8', marginBottom: 12 }}>✦ PORTFOLIO ✦</span>
-                        <h2 className="serif" style={{ fontSize: 'clamp(28px,3.5vw,44px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.03em' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: '#D8B4E8', marginBottom: 12 }}>
+                            <span>✦</span>
+                            <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>PORTFOLIO</span>
+                            <span>✦</span>
+                        </div>
+                        <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,48px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.02em' }}>
                             Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
                         </h2>
                     </div>
-                    <a className="btn-outline" href="#" style={{ fontSize: 13 }}>All Projects →</a>
+                    <a className="btn-outline" href="#" style={{ fontSize: 13 }}>View All Projects →</a>
                 </div>
 
                 <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
