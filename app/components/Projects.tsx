@@ -11,6 +11,7 @@ export interface Project {
     accent: string;
     mockupLines: string[];
     image?: string;
+    url?: string;
 }
 
 export const projects: Project[] = [
@@ -22,7 +23,8 @@ export const projects: Project[] = [
         gradient: "linear-gradient(135deg, rgba(125,211,252,0.2) 0%, rgba(192,132,232,0.2) 100%)",
         accent: "#7DD3FC",
         mockupLines: [],
-        image: "/fleet-logistics.png"
+        image: "/fleet-logistics.png",
+        url: "https://logistic-three-smoky.vercel.app/"
     },
     {
         title: "HireHub — Job Management",
@@ -32,7 +34,19 @@ export const projects: Project[] = [
         gradient: "linear-gradient(135deg, rgba(232,168,184,0.2) 0%, rgba(255,191,168,0.2) 100%)",
         accent: "#E8A8B8",
         mockupLines: [],
-        image: "/job-portal.png"
+        image: "/job-portal.png",
+        url: "https://job-refferal-frontend.vercel.app/"
+    },
+    {
+        title: "Doctor-For — Healthcare",
+        desc: "A comprehensive healthcare platform enabling patients to search for specialists and book online appointments seamlessly. Features a clean, patient-centric interface.",
+        tags: ["React", "Express", "MongoDB", "Auth"],
+        emoji: "🩺",
+        gradient: "linear-gradient(135deg, rgba(147,197,253,0.2) 0%, rgba(167,243,208,0.2) 100%)",
+        accent: "#60A5FA",
+        mockupLines: [],
+        image: "/doctor-for.png",
+        url: "https://doctor-for.vercel.app/"
     },
 ];
 
@@ -71,9 +85,16 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         <span key={t} style={{ fontSize: 11, fontWeight: 600, padding: '4px 12px', borderRadius: 99, background: `${project.accent}22`, color: project.accent, border: `1px solid ${project.accent}44`, letterSpacing: '0.04em' }}>{t}</span>
                     ))}
                 </div>
-                <button className="btn-outline" style={{ fontSize: 13, padding: '8px 20px', borderColor: project.accent, color: project.accent }}>
-                    View Project →
-                </button>
+                <div style={{ display: 'flex', gap: 12 }}>
+                    <button className="btn-outline" style={{ fontSize: 13, padding: '8px 20px', borderColor: project.accent, color: project.accent, flex: 1 }}>
+                        Details →
+                    </button>
+                    {project.url && (
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-cta" style={{ fontSize: 13, padding: '8px 20px', flex: 1, textDecoration: 'none', textAlign: 'center' }}>
+                            Live Demo 🚀
+                        </a>
+                    )}
+                </div>
             </div>
         </div>
     );
