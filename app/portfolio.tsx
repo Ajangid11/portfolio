@@ -633,12 +633,13 @@ function TechStackSection() {
     return (
         <section id="stack" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: 52 }}>
-                    <span style={{ display: 'inline-block', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#FF9EBE', marginBottom: 12 }}>✦ WHAT I WORK WITH ✦</span>
-                    <h2 className="serif" style={{ fontSize: 'clamp(28px,3.5vw,44px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.03em' }}>
+                <div style={{ textAlign: 'center', marginBottom: 52, position: 'relative', padding: '30px 0' }}>
+                    <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '80%', transform: 'translate(-50%, -50%)', width: '440px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
+                    <span style={{ display: 'inline-block', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#FF9EBE', marginBottom: 12, position: 'relative', zIndex: 1 }}>✦ WHAT I WORK WITH ✦</span>
+                    <h2 className="serif" style={{ fontSize: 'clamp(28px,3.5vw,44px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.03em', position: 'relative', zIndex: 1 }}>
                         My <span className="gradient-text" style={{ fontStyle: 'italic' }}>Tech Stack</span>
                     </h2>
-                    <p style={{ marginTop: 12, color: '#94A3B8', fontSize: 15 }}>Languages, frameworks & tools I love working with 💻</p>
+                    <p style={{ marginTop: 12, color: '#94A3B8', fontSize: 15, position: 'relative', zIndex: 1 }}>Languages, frameworks & tools I love working with 💻</p>
                 </div>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
@@ -687,12 +688,13 @@ function ContactSection() {
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '60vw', height: '60vh', borderRadius: '50%', background: 'radial-gradient(circle, rgba(216,180,232,0.18), rgba(255,158,190,0.12), transparent 70%)', filter: 'blur(60px)', zIndex: 0 }} />
 
             <div style={{ maxWidth: 700, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-                <div style={{ textAlign: 'center', marginBottom: 52 }}>
-                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#E8A8B8', display: 'block', marginBottom: 12 }}>✦ GET IN TOUCH ✦</span>
-                    <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,52px)', fontWeight: 900, color: '#1E293B', letterSpacing: '-0.03em', marginBottom: 12 }}>
+                <div style={{ textAlign: 'center', marginBottom: 52, position: 'relative', padding: '30px 0' }}>
+                    <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '80%', transform: 'translate(-50%, -50%)', width: '440px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
+                    <span style={{ fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#E8A8B8', display: 'block', marginBottom: 12, position: 'relative', zIndex: 1 }}>✦ GET IN TOUCH ✦</span>
+                    <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,52px)', fontWeight: 900, color: '#1E293B', letterSpacing: '-0.03em', marginBottom: 12, position: 'relative', zIndex: 1 }}>
                         Let's Connect <span className="gradient-text">💕</span>
                     </h2>
-                    <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.7 }}>Got a project, collab idea, or just want to say hi?<br />My DMs are always open 🌸</p>
+                    <p style={{ color: '#94A3B8', fontSize: 15, lineHeight: 1.7, position: 'relative', zIndex: 1 }}>Got a project, collab idea, or just want to say hi?<br />My DMs are always open 🌸</p>
                 </div>
 
                 {/* Socials */}
