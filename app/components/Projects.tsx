@@ -117,9 +117,9 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: 52 }}>
-                    <div style={{ position: 'relative', padding: '30px 0', width: '100%' }}>
+                    <div style={{ position: 'relative', padding: '10px 0', width: '100%' }}>
                         {/* Heading decorative background */}
-                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '80%', transform: 'translate(-50%, -50%)', width: '440px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
+                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '45%', transform: 'translate(-50%, -50%)', width: '320px', maxWidth: '80vw', opacity: 0.5, zIndex: 0, pointerEvents: 'none' }} />
 
                         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, color: '#D8B4E8', marginBottom: 12, position: 'relative', zIndex: 1 }}>
                             <span>✦</span>
