@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { SectionHeading } from "./SectionHeading";
 
 export interface Project {
     title: string;
@@ -116,16 +117,9 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
     return (
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', marginBottom: 52 }}>
-                    <div style={{ position: 'relative', padding: '20px 0', width: '100%' }}>
-                        {/* Heading decorative background */}
-                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '500px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
-
-                        <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,48px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.02em', position: 'relative', zIndex: 1 }}>
-                            Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
-                        </h2>
-                    </div>
-                </div>
+                <SectionHeading>
+                    Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
+                </SectionHeading>
 
                 <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
                     {projects.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}

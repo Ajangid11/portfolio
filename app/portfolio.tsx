@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import { ProjectsSection } from "./components/Projects";
+import { SectionHeading } from "./components/SectionHeading";
 
 /* ─────────────────────────────────────────────
    TYPES & INTERFACES
@@ -633,12 +634,9 @@ function TechStackSection() {
     return (
         <section id="stack" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', marginBottom: 52, position: 'relative', padding: '20px 0' }}>
-                    <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '500px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
-                    <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,48px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.03em', position: 'relative', zIndex: 1 }}>
-                        My <span className="gradient-text" style={{ fontStyle: 'italic' }}>Tech Stack</span>
-                    </h2>
-                </div>
+                <SectionHeading>
+                    My <span className="gradient-text" style={{ fontStyle: 'italic' }}>Tech Stack</span>
+                </SectionHeading>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
                     {techStack.map((t, i) => (
@@ -686,12 +684,9 @@ function ContactSection() {
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '60vw', height: '60vh', borderRadius: '50%', background: 'radial-gradient(circle, rgba(216,180,232,0.18), rgba(255,158,190,0.12), transparent 70%)', filter: 'blur(60px)', zIndex: 0 }} />
 
             <div style={{ maxWidth: 700, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-                <div style={{ textAlign: 'center', marginBottom: 52, position: 'relative', padding: '20px 0' }}>
-                    <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '500px', maxWidth: '95vw', opacity: 0.9, zIndex: 0, pointerEvents: 'none' }} />
-                    <h2 className="serif" style={{ fontSize: 'clamp(32px,4vw,52px)', fontWeight: 900, color: '#1E293B', letterSpacing: '-0.03em', position: 'relative', zIndex: 1 }}>
-                        Let's Connect <span className="gradient-text">💕</span>
-                    </h2>
-                </div>
+                <SectionHeading>
+                    Let's Connect <span className="gradient-text">💕</span>
+                </SectionHeading>
 
                 {/* Socials */}
                 <div style={{ display: 'flex', justifyContent: 'center', gap: 14, marginBottom: 44 }}>
