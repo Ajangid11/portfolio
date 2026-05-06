@@ -117,7 +117,10 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: 52, flexWrap: 'wrap', gap: 20 }}>
-                    <div>
+                    <div style={{ position: 'relative' }}>
+                        {/* Heading decorative background */}
+                        <img src="/heading-img.png" alt="" style={{ position: 'absolute', left: '-40px', top: '50%', transform: 'translateY(-50%)', height: '160%', opacity: 0.12, zIndex: -1, pointerEvents: 'none', filter: 'blur(2px)' }} />
+                        
                         <span style={{ display: 'inline-block', fontSize: 12, fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#D8B4E8', marginBottom: 12 }}>✦ PORTFOLIO ✦</span>
                         <h2 className="serif" style={{ fontSize: 'clamp(28px,3.5vw,44px)', fontWeight: 800, color: '#1E293B', letterSpacing: '-0.03em' }}>
                             Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
