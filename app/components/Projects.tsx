@@ -10,6 +10,7 @@ export interface Project {
     gradient: string;
     accent: string;
     mockupLines: string[];
+    image?: string;
 }
 
 export const projects: Project[] = [
@@ -40,6 +41,16 @@ export const projects: Project[] = [
         accent: "#FFBFA8",
         mockupLines: ["#FFBFA8", "#E8A8B8", "#FDD", "#FFD700"],
     },
+    {
+        title: "FleetTrack — Logistics ERP",
+        desc: "A powerful fleet and logistics management system featuring real-time GPS tracking, automated dispatching, and comprehensive booking workflows. Built for high-scale operations.",
+        tags: ["React", "Node.js", "MongoDB", "Maps"],
+        emoji: "🚚",
+        gradient: "linear-gradient(135deg, rgba(125,211,252,0.2) 0%, rgba(192,132,232,0.2) 100%)",
+        accent: "#7DD3FC",
+        mockupLines: [],
+        image: "/fleet-logistics.png"
+    },
 ];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -48,15 +59,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {/* Decorative bg glow */}
             <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', background: `radial-gradient(circle, ${project.accent}33, transparent 70%)`, filter: 'blur(20px)', zIndex: 0 }} />
 
-            {/* Mock screen */}
-            <div style={{ borderRadius: 16, background: 'rgba(30,41,59,0.88)', padding: '16px', marginBottom: 20, position: 'relative', zIndex: 1, backdropFilter: 'blur(8px)' }}>
-                <div style={{ display: 'flex', gap: 6, marginBottom: 12 }}>
-                    {['#FF6B6B', '#FFE66D', '#6BCF7F'].map(c => <div key={c} style={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
-                </div>
-                {project.mockupLines.map((c, i) => (
-                    <div key={i} style={{ height: 6, borderRadius: 3, marginBottom: 8, background: `linear-gradient(90deg, ${c}88, transparent)`, width: `${55 + i * 10}%` }} />
-                ))}
-                <div style={{ height: 30, borderRadius: 8, background: `${project.accent}22`, border: `1px solid ${project.accent}44`, marginTop: 12 }} />
+            {/* Mock screen or Image */}
+            <div style={{ borderRadius: 16, background: 'rgba(30,41,59,0.88)', height: 160, marginBottom: 20, position: 'relative', zIndex: 1, backdropFilter: 'blur(8px)', overflow: 'hidden' }}>
+                {project.image ? (
+                    <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }} />
+                ) : (
+                    <div style={{ padding: '16px' }}>
+                        <div style={{ display: 'flex', gap: 6, marginBottom: 12 }}>
+                            {['#FF6B6B', '#FFE66D', '#6BCF7F'].map(c => <div key={c} style={{ width: 10, height: 10, borderRadius: '50%', background: c }} />)}
+                        </div>
+                        {project.mockupLines.map((c, i) => (
+                            <div key={i} style={{ height: 6, borderRadius: 3, marginBottom: 8, background: `linear-gradient(90deg, ${c}88, transparent)`, width: `${55 + i * 10}%` }} />
+                        ))}
+                        <div style={{ height: 30, borderRadius: 8, background: `${project.accent}22`, border: `1px solid ${project.accent}44`, marginTop: 12 }} />
+                    </div>
+                )}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(30,41,59,0.4))' }} />
             </div>
 
             <div style={{ position: 'relative', zIndex: 1 }}>
