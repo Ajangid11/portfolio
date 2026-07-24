@@ -64,12 +64,12 @@ export const projects: Project[] = [
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
     return (
-        <div className="glass project-card" style={{ padding: 28, borderRadius: 28, background: project.gradient, position: 'relative', cursor: 'pointer', animationDelay: `${index * 0.15}s` }}>
+        <div className="glass project-card" style={{ padding: 28, borderRadius: 28, background: project.gradient, position: 'relative', cursor: 'default', animationDelay: `${index * 0.15}s`, display: 'flex', flexDirection: 'column', height: '100%' }}>
             {/* Decorative bg glow */}
             <div style={{ position: 'absolute', top: -40, right: -40, width: 160, height: 160, borderRadius: '50%', background: `radial-gradient(circle, ${project.accent}33, transparent 70%)`, filter: 'blur(20px)', zIndex: 0 }} />
 
             {/* Mock screen or Image */}
-            <div style={{ borderRadius: 16, background: 'rgba(30,41,59,0.88)', height: 160, marginBottom: 20, position: 'relative', zIndex: 1, backdropFilter: 'blur(8px)', overflow: 'hidden' }}>
+            <div style={{ borderRadius: 16, background: 'rgba(30,41,59,0.88)', height: 200, marginBottom: 20, position: 'relative', zIndex: 1, backdropFilter: 'blur(8px)', overflow: 'hidden', flexShrink: 0 }}>
                 {project.image ? (
                     <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.85 }} />
                 ) : (
@@ -86,7 +86,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 50%, rgba(30,41,59,0.4))' }} />
             </div>
 
-            <div style={{ position: 'relative', zIndex: 1 }}>
+            <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                     <span style={{ fontSize: 24 }}>{project.emoji}</span>
                     <h3 className="serif" style={{ fontSize: 20, fontWeight: 800, color: '#1E293B', letterSpacing: '-0.02em' }}>{project.title}</h3>
@@ -97,12 +97,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                         <span key={t} style={{ fontSize: 11, fontWeight: 600, padding: '4px 12px', borderRadius: 99, background: `${project.accent}22`, color: project.accent, border: `1px solid ${project.accent}44`, letterSpacing: '0.04em' }}>{t}</span>
                     ))}
                 </div>
-                <div style={{ display: 'flex', gap: 12 }}>
-                    <button className="btn-outline" style={{ fontSize: 13, padding: '8px 20px', borderColor: project.accent, color: project.accent, flex: 1 }}>
-                        Details →
-                    </button>
+                <div style={{ marginTop: 'auto' }}>
                     {project.url && (
-                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-cta" style={{ fontSize: 13, padding: '8px 20px', flex: 1, textDecoration: 'none', textAlign: 'center' }}>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-cta" style={{ fontSize: 13, padding: '10px 20px', width: '100%', textDecoration: 'none', textAlign: 'center', justifyContent: 'center' }}>
                             Live Demo 🚀
                         </a>
                     )}
@@ -117,16 +114,12 @@ export function ProjectsSection({ useFadeIn }: { useFadeIn: () => React.RefObjec
     return (
         <section id="projects" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <SectionHeading>
+                <SectionHeading eyebrow="Selected work">
                     Featured <span className="gradient-text" style={{ fontStyle: 'italic' }}>Projects</span>
                 </SectionHeading>
 
-                <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+                <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: 28 }}>
                     {projects.map((p, i) => <ProjectCard key={p.title} project={p} index={i} />)}
-                </div>
-
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 40 }}>
-                    <a className="btn-outline" href="#" style={{ fontSize: 13 }}>View All Projects →</a>
                 </div>
             </div>
         </section>

@@ -571,10 +571,6 @@ function HeroSection() {
                             <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 8px #4ADE80', display: 'block' }} />
                             <span style={{ fontSize: 12, fontWeight: 500, color: '#64748B', letterSpacing: '0.02em' }}>Available for opportunities ✨</span>
                         </div>
-                        <a href="https://www.maitriiinfotech.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600, color: '#FF9EBE', textDecoration: 'none', background: 'white', padding: '6px 16px', borderRadius: 999, border: '1.5px solid #FF9EBE', boxShadow: '0 4px 12px rgba(255,158,190,0.15)', transition: 'all 0.2s' }}>
-                            <span>Building @ Maitrii Infotech</span>
-                            <span style={{ fontSize: 14 }}>🌐</span>
-                        </a>
                     </div>
 
                     <div>
@@ -586,12 +582,12 @@ function HeroSection() {
                     </div>
 
                     <p style={{ fontSize: 16, lineHeight: 1.75, color: '#64748B', maxWidth: 480, fontWeight: 400 }}>
-                        19-year-old full-stack developer & UI/UX enthusiast. I turn ideas into beautifully engineered digital experiences — one component at a time. 🌸
+                        26-year-old full-stack developer & UI/UX enthusiast. I turn ideas into beautifully engineered digital experiences — one component at a time. 🌸
                     </p>
 
                     <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap', marginTop: 4 }}>
                         <a className="btn-cta" href="#projects">View my Work 🚀</a>
-                        <a className="btn-outline" href="#contact">Download CV</a>
+                        <a className="btn-outline" href="#contact">Get in Touch</a>
                     </div>
 
                     {/* Stats row */}
@@ -634,9 +630,13 @@ function TechStackSection() {
     return (
         <section id="stack" ref={ref} className="fade-section" style={{ padding: '80px 6vw', position: 'relative' }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-                <SectionHeading>
+                <SectionHeading eyebrow="What I build with">
                     My <span className="gradient-text" style={{ fontStyle: 'italic' }}>Tech Stack</span>
                 </SectionHeading>
+
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: '#64748B', maxWidth: 520, margin: '-16px auto 40px', textAlign: 'center' }}>
+                    Languages, frameworks and tools I reach for daily to design, build, and ship products end-to-end. 🌸
+                </p>
 
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 14, justifyContent: 'center' }}>
                     {techStack.map((t, i) => (
@@ -657,9 +657,35 @@ function ContactSection() {
     const ref = useFadeIn();
     const [val, setVal] = useState({ name: '', email: '', msg: '' });
     const [sent, setSent] = useState(false);
+    const [sending, setSending] = useState(false);
+    const [error, setError] = useState('');
 
-    const handle = () => {
-        if (val.name && val.email && val.msg) { setSent(true); setTimeout(() => setSent(false), 3000); setVal({ name: '', email: '', msg: '' }); }
+    const handle = async () => {
+        if (!(val.name && val.email && val.msg)) return;
+        setSending(true);
+        setError('');
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+                    subject: 'New message from portfolio contact form',
+                    name: val.name,
+                    email: val.email,
+                    message: val.msg,
+                }),
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) throw new Error(data.message || 'Failed to send');
+            setSent(true);
+            setTimeout(() => setSent(false), 3000);
+            setVal({ name: '', email: '', msg: '' });
+        } catch (err) {
+            setError('Message send nahi hua, dobara try karo.');
+        } finally {
+            setSending(false);
+        }
     };
 
     const inputStyle = {
@@ -670,12 +696,12 @@ function ContactSection() {
         outline: 'none', transition: 'border-color 0.2s, box-shadow 0.2s',
     };
 
-    const socials: SocialItem[] = [
+    const socials: (SocialItem & { href?: string })[] = [
         { icon: '𝕏', label: 'Twitter' },
         { icon: 'in', label: 'LinkedIn' },
         { icon: '⬡', label: 'GitHub' },
         { icon: '🎨', label: 'Dribbble' },
-        { icon: '✉️', label: 'Email' },
+        { icon: '✉️', label: 'Email', href: 'mailto:anjijangid8@gmail.com' },
     ];
 
     return (
@@ -684,16 +710,26 @@ function ContactSection() {
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)', width: '60vw', height: '60vh', borderRadius: '50%', background: 'radial-gradient(circle, rgba(216,180,232,0.18), rgba(255,158,190,0.12), transparent 70%)', filter: 'blur(60px)', zIndex: 0 }} />
 
             <div style={{ maxWidth: 700, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-                <SectionHeading>
+                <SectionHeading eyebrow="Get in touch">
                     Let's Connect <span className="gradient-text">💕</span>
                 </SectionHeading>
+
+                <p style={{ fontSize: 15, lineHeight: 1.7, color: '#64748B', maxWidth: 480, margin: '-16px auto 36px', textAlign: 'center' }}>
+                    Got a project, an opportunity, or just want to say hi? My inbox is always open. ✨
+                </p>
 
                 {/* Socials */}
                 <div style={{ display: 'flex', justifyContent: 'center', gap: 14, marginBottom: 44 }}>
                     {socials.map(s => (
-                        <button key={s.label} className="social-icon" title={s.label} style={{ fontFamily: 'Georgia, serif', fontWeight: 700, fontSize: 16 }}>
-                            {s.icon}
-                        </button>
+                        s.href ? (
+                            <a key={s.label} href={s.href} className="social-icon" title={s.label} style={{ fontFamily: 'Georgia, serif', fontWeight: 700, fontSize: 16, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none' }}>
+                                {s.icon}
+                            </a>
+                        ) : (
+                            <button key={s.label} className="social-icon" title={s.label} style={{ fontFamily: 'Georgia, serif', fontWeight: 700, fontSize: 16 }}>
+                                {s.icon}
+                            </button>
+                        )
                     ))}
                 </div>
 
@@ -712,8 +748,9 @@ function ContactSection() {
                                 <input style={inputStyle} placeholder="Email ✉️" value={val.email} onChange={e => setVal(v => ({ ...v, email: e.target.value }))} onFocus={e => { (e.target as HTMLElement).style.borderColor = '#D8B4E8'; (e.target as HTMLElement).style.boxShadow = '0 0 20px rgba(216,180,232,0.25)' }} onBlur={e => { (e.target as HTMLElement).style.borderColor = 'rgba(255,158,190,0.3)'; (e.target as HTMLElement).style.boxShadow = 'none' }} />
                             </div>
                             <textarea style={{ ...inputStyle, minHeight: 120, resize: 'vertical' }} placeholder="Your message... 💬" value={val.msg} onChange={e => setVal(v => ({ ...v, msg: e.target.value }))} onFocus={e => { (e.target as HTMLElement).style.borderColor = '#FF9EBE'; (e.target as HTMLElement).style.boxShadow = '0 0 20px rgba(255,158,190,0.25)' }} onBlur={e => { (e.target as HTMLElement).style.borderColor = 'rgba(255,158,190,0.3)'; (e.target as HTMLElement).style.boxShadow = 'none' }} />
-                            <button className="btn-cta" onClick={handle} style={{ alignSelf: 'center', marginTop: 8 }}>
-                                Send Message ✨
+                            {error && <p style={{ color: '#E11D48', fontSize: 13, textAlign: 'center' }}>{error}</p>}
+                            <button className="btn-cta" onClick={handle} disabled={sending} style={{ alignSelf: 'center', marginTop: 8, opacity: sending ? 0.6 : 1 }}>
+                                {sending ? 'Sending...' : 'Send Message ✨'}
                             </button>
                         </div>
                     )}
