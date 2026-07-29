@@ -1,26 +1,51 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* basis33 (the .font-pixel face) is loaded via <link> in layout.tsx — Tailwind v4
+   inlines its own import here, so a second @import would no longer be first. */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: #0c0c0c;
+  --color-foreground: #d7e2ea;
+  --font-sans: var(--font-kanit), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Keep the reset inside the base layer — unlayered rules would override
+   Tailwind's layered utilities (mx-auto, px-*, mt-*) and break centering. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 }
 
+html,
+body,
+#root {
+  background: #0c0c0c;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-kanit), sans-serif;
+  color: #d7e2ea;
+}
+
+/* Pixel/bitmap face used by the landing hero. */
+.font-pixel {
+  font-family: "basis33", monospace;
+}
+
+/* The landing hero runs on Inter; the rest of the page stays on Kanit. */
+.font-inter {
+  font-family: var(--font-inter), "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

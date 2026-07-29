@@ -1,10 +1,19 @@
-import Image from "next/image";
-import Portfolio from "./portfolio";
+import { LandingHero } from "./components/LandingHero";
+import { MarqueeSection } from "./components/MarqueeSection";
+import { AboutSection } from "./components/AboutSection";
+import { ServicesSection } from "./components/ServicesSection";
+import { ProjectsSection } from "./components/ProjectsSection";
+import { ContactSection } from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <Portfolio />
-    </div>
+    <main style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
+      <LandingHero />
+      <MarqueeSection />
+      <AboutSection />
+      <ServicesSection />
+      <ProjectsSection />
+      <ContactSection />
+    </main>
   );
 }
