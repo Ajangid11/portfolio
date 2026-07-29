@@ -116,19 +116,19 @@ export function LandingHero() {
           </div>
 
           <div>
-            <p className="font-pixel mb-3 text-base uppercase tracking-widest text-white/50">
+            <p className="font-pixel mb-1.5 text-[10px] uppercase tracking-widest text-white/50 sm:mb-3 sm:text-base">
               What I Do
             </p>
-            <p className="max-w-[220px] text-sm leading-relaxed text-white/90">
+            <p className="max-w-[220px] text-[11px] leading-relaxed text-white/90 sm:text-sm">
               I build fast, reliable web products — from first line of code to production
             </p>
           </div>
 
           <div className="text-right lg:text-left">
-            <p className="font-pixel mb-3 text-base uppercase tracking-widest text-white/50">
+            <p className="font-pixel mb-1.5 text-[10px] uppercase tracking-widest text-white/50 sm:mb-3 sm:text-base">
               Services
             </p>
-            <ul className="space-y-0.5 text-sm leading-relaxed text-white/90">
+            <ul className="space-y-0.5 text-[11px] leading-relaxed text-white/90 sm:text-sm">
               {SERVICES.map((service) => (
                 <li key={service}>{service}</li>
               ))}
@@ -138,8 +138,9 @@ export function LandingHero() {
 
         <div className="flex-1" />
 
-        {/* BOTTOM SECTION */}
-        <div className="pb-4">
+        {/* BOTTOM SECTION — mt on small screens because the 0.72 line-height
+            lets the headline glyphs bleed up out of their line box. */}
+        <div className="mt-10 pb-4 sm:mt-0">
           <div className="grid grid-cols-1 items-end gap-4 sm:gap-6 lg:grid-cols-2">
             <h1
               className="text-3xl font-normal uppercase tracking-wide sm:text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem]"
