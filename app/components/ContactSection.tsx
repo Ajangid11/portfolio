@@ -56,13 +56,13 @@ export function ContactSection() {
   };
 
   const inputClass =
-    "rounded-xl border border-[#F3EDE0]/25 bg-transparent px-4 py-3 text-sm text-[#F3EDE0] outline-none placeholder:text-[#F3EDE0]/40 focus:border-[#F3EDE0]/60";
+    "rounded-xl border border-[#E9EDF5]/25 bg-transparent px-4 py-3 text-sm text-[#E9EDF5] outline-none placeholder:text-[#E9EDF5]/40 focus:border-[#E9EDF5]/60";
 
   return (
     <section
       id="contact"
-      className="relative z-20 px-5 py-20 sm:px-8 md:px-10 md:py-28"
-      style={{ backgroundColor: "#17130B" }}
+      className="section-glow relative z-20 px-5 py-20 sm:px-8 md:px-10 md:py-28"
+      style={{ backgroundColor: "#05070D" }}
     >
       {/* Layout change: centered single column -> two columns.
           Left: heading, pitch and direct contact links. Right: the form
@@ -72,7 +72,7 @@ export function ContactSection() {
           <FadeIn>
             <p
               className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
-              style={{ color: "#E8490F" }}
+              style={{ color: "#00C2FF" }}
             >
               Contact
             </p>
@@ -90,16 +90,16 @@ export function ContactSection() {
             as="p"
             delay={0.1}
             y={20}
-            className="mt-6 max-w-md font-light leading-relaxed text-[#F3EDE0]"
+            className="mt-6 max-w-md font-light leading-relaxed text-[#E9EDF5]"
             style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.15rem)" }}
           >
             Got a project, a role, or just want to say hi? My inbox is open —
             I usually reply within a day.
           </FadeIn>
 
-          <FadeIn delay={0.2} y={20} className="mt-8 flex flex-col gap-3 text-sm text-[#F3EDE0]/80">
-            <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 transition-colors hover:text-[#F3EDE0]">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#F3EDE0]/30">
+          <FadeIn delay={0.2} y={20} className="mt-8 flex flex-col gap-3 text-sm text-[#E9EDF5]/80">
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 transition-colors hover:text-[#E9EDF5]">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E9EDF5]/30">
                 <Mail size={16} />
               </span>
               {EMAIL}
@@ -108,23 +108,23 @@ export function ContactSection() {
               href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 transition-colors hover:text-[#F3EDE0]"
+              className="flex items-center gap-3 transition-colors hover:text-[#E9EDF5]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#F3EDE0]/30">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#E9EDF5]/30">
                 <GithubIcon size={16} />
               </span>
               github.com/Ajangid11
             </a>
-            <p className="mt-2 flex items-center gap-2 text-[#F3EDE0]/60">
-              <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#E8490F" }} />
+            <p className="mt-2 flex items-center gap-2 text-[#E9EDF5]/60">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#00C2FF" }} />
               Open to freelance, contract or full-time
             </p>
           </FadeIn>
         </div>
 
-        <FadeIn delay={0.2} y={20} className="rounded-3xl border border-[#F3EDE0]/20 bg-white/[0.03] p-6 sm:p-8">
+        <FadeIn delay={0.2} y={20} className="rounded-3xl border border-[#E9EDF5]/20 bg-white/[0.03] p-6 sm:p-8">
           {status === "sent" ? (
-            <p className="py-10 text-lg font-medium text-[#F3EDE0]">
+            <p className="py-10 text-lg font-medium text-[#E9EDF5]">
               Message sent — I&apos;ll get back to you soon.
             </p>
           ) : (
@@ -155,7 +155,7 @@ export function ContactSection() {
                 className={`resize-none ${inputClass}`}
               />
               {status === "error" && (
-                <p className="text-sm text-orange-300">Message failed to send — try again.</p>
+                <p className="text-sm text-red-300">Message failed to send — try again.</p>
               )}
               <button
                 type="submit"
@@ -163,9 +163,9 @@ export function ContactSection() {
                 className="mt-2 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full px-12 py-4 text-sm font-medium uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:opacity-60"
                 style={{
                   background:
-                    "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
-                  boxShadow: "0px 6px 16px rgba(232, 73, 15, 0.35), 4px 4px 12px rgba(120, 40, 0, 0.5) inset",
-                  outline: "2px solid #F3EDE0",
+                    "linear-gradient(120deg, #7C5CFF 0%, #00C2FF 55%, #00E5A0 110%)",
+                  boxShadow: "0px 8px 24px rgba(0, 194, 255, 0.35), 4px 4px 12px rgba(124, 92, 255, 0.45) inset",
+                  outline: "2px solid #E9EDF5",
                   outlineOffset: "-3px",
                 }}
               >

@@ -132,20 +132,20 @@ const STORY =
 
 export default function AboutPage() {
   return (
-    <main style={{ backgroundColor: "#17130B", overflowX: "clip" }}>
+    <main style={{ backgroundColor: "#05070D", overflowX: "clip" }}>
       {/* TOP BAR */}
       <header className="mx-auto flex w-full max-w-6xl items-center justify-between px-5 py-6 sm:px-8 md:px-10">
         <Link
           href="/"
-          className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-[#F3EDE0] transition-opacity hover:opacity-70 sm:text-sm"
+          className="flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-[#E9EDF5] transition-opacity hover:opacity-70 sm:text-sm"
         >
           <ArrowLeft size={16} />
           Home
         </Link>
-        <span className="text-sm font-black tracking-tight text-[#F3EDE0]">AJ</span>
+        <span className="text-sm font-black tracking-tight text-[#E9EDF5]">AJ</span>
         <Link
           href="/#contact"
-          className="flex items-center gap-1 text-xs font-medium uppercase tracking-widest text-[#F3EDE0] transition-opacity hover:opacity-70 sm:text-sm"
+          className="flex items-center gap-1 text-xs font-medium uppercase tracking-widest text-[#E9EDF5] transition-opacity hover:opacity-70 sm:text-sm"
         >
           Contact
           <ArrowUpRight size={14} />
@@ -158,7 +158,7 @@ export default function AboutPage() {
           as="p"
           delay={0}
           y={20}
-          className="mx-auto mb-4 w-full max-w-6xl text-left text-xs font-medium uppercase tracking-[0.3em] text-[#F3EDE0]/60 sm:text-sm"
+          className="mx-auto mb-4 w-full max-w-6xl text-left text-xs font-medium uppercase tracking-[0.3em] text-[#E9EDF5]/60 sm:text-sm"
         >
           Full-Stack Developer &amp; UI/UX Enthusiast — India
         </FadeIn>
@@ -176,8 +176,8 @@ export default function AboutPage() {
         <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 items-center gap-10 md:mt-16 md:grid-cols-2 md:gap-14">
           <FadeIn delay={0.1} y={30} className="relative">
             <div
-              className="overflow-hidden rounded-3xl border-2 border-[#F3EDE0] sm:rounded-[40px]"
-              style={{ boxShadow: "0 24px 60px rgba(232, 73, 15, 0.22)" }}
+              className="overflow-hidden rounded-3xl border-2 border-[#E9EDF5] sm:rounded-[40px]"
+              style={{ boxShadow: "0 24px 60px rgba(0, 194, 255, 0.25)" }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -186,7 +186,7 @@ export default function AboutPage() {
                 className="aspect-[4/5] w-full object-cover object-top sm:aspect-[5/5]"
               />
             </div>
-            <div className="absolute -bottom-4 left-4 flex items-center gap-2 bg-[#221B10] px-4 py-2 text-sm text-white/80 sm:left-6">
+            <div className="absolute -bottom-4 left-4 flex items-center gap-2 bg-[#0B101D] px-4 py-2 text-sm text-white/80 sm:left-6">
               <span className="font-bold text-lg text-white">ANJALI JANGID</span>
               <span className="text-xs text-white/50">FULL-STACK DEV</span>
             </div>
@@ -195,7 +195,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-8">
             <AnimatedText
               text={STORY}
-              className="font-medium leading-relaxed text-[#F3EDE0]"
+              className="font-medium leading-relaxed text-[#E9EDF5]"
               style={{ fontSize: "clamp(1rem, 2vw, 1.3rem)" }}
             />
 
@@ -208,16 +208,16 @@ export default function AboutPage() {
 
         {/* Stats strip — layout change: was a 2x2 grid beside the text */}
         <FadeIn delay={0.2} y={24}>
-          <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 border-y border-[#F3EDE0]/15 md:mt-20 lg:grid-cols-4">
+          <div className="mx-auto mt-14 grid max-w-6xl grid-cols-2 border-y border-[#E9EDF5]/15 md:mt-20 lg:grid-cols-4">
             {STATS.map((stat) => (
               <div
                 key={stat.label}
-                className="border-[#F3EDE0]/15 px-5 py-6 odd:border-r lg:border-r lg:px-8 lg:last:border-r-0 [&:nth-child(-n+2)]:border-b lg:[&:nth-child(-n+2)]:border-b-0"
+                className="border-[#E9EDF5]/15 px-5 py-6 odd:border-r lg:border-r lg:px-8 lg:last:border-r-0 [&:nth-child(-n+2)]:border-b lg:[&:nth-child(-n+2)]:border-b-0"
               >
                 <p className="hero-heading font-black leading-none" style={{ fontSize: "clamp(1.9rem, 4vw, 3.2rem)" }}>
                   {stat.value}
                 </p>
-                <p className="mt-2 text-[11px] font-light uppercase tracking-widest text-[#F3EDE0]/60 sm:text-xs">
+                <p className="mt-2 text-[11px] font-light uppercase tracking-widest text-[#E9EDF5]/60 sm:text-xs">
                   {stat.label}
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function AboutPage() {
           </FadeIn>
 
           <div className="flex flex-col gap-6">
-            <FadeIn as="p" delay={0.1} y={20} className="font-light leading-relaxed text-[#F3EDE0]" style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}>
+            <FadeIn as="p" delay={0.1} y={20} className="font-light leading-relaxed text-[#E9EDF5]" style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}>
               My work has taken me across very different kinds of products — and each one taught me something new.
               I built <strong className="font-semibold">FleetTrack</strong>, a logistics ERP where fleet managers track
               vehicles live on a map and dispatching runs itself. I built <strong className="font-semibold">HireHub</strong>,
@@ -250,16 +250,16 @@ export default function AboutPage() {
               And I built <strong className="font-semibold">Doctor-For</strong>, a healthcare platform where patients
               find the right specialist and book an appointment in a few taps.
             </FadeIn>
-            <FadeIn as="p" delay={0.18} y={20} className="font-light leading-relaxed text-[#F3EDE0]/80" style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}>
-              Along the way I&apos;ve shipped the corporate site for <strong className="font-semibold text-[#F3EDE0]">Maitrii Infotech</strong> and{" "}
-              <strong className="font-semibold text-[#F3EDE0]">Axon</strong>, a landing experience for an AI workflow agent.
+            <FadeIn as="p" delay={0.18} y={20} className="font-light leading-relaxed text-[#E9EDF5]/80" style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}>
+              Along the way I&apos;ve shipped the corporate site for <strong className="font-semibold text-[#E9EDF5]">Maitrii Infotech</strong> and{" "}
+              <strong className="font-semibold text-[#E9EDF5]">Axon</strong>, a landing experience for an AI workflow agent.
               Different industries, same rule every time: clean UI, reliable code, real results. Design and engineering
               are not two separate jobs to me — a product only feels right when both are done by someone who cares
               about the other.
             </FadeIn>
             <FadeIn delay={0.25} y={20} className="flex flex-wrap gap-2 pt-2">
               {["Logistics", "Healthcare", "Recruitment", "Agency", "AI Products"].map((area) => (
-                <span key={area} className="rounded-full bg-[#F3EDE0]/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-[#F3EDE0]">
+                <span key={area} className="rounded-full bg-[#E9EDF5]/10 px-4 py-1.5 text-xs font-medium uppercase tracking-widest text-[#E9EDF5]">
                   {area}
                 </span>
               ))}
@@ -271,13 +271,13 @@ export default function AboutPage() {
       {/* TECH STACK — white band, matching ServicesSection */}
       <section
         className="relative z-0 rounded-t-[40px] px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10"
-        style={{ backgroundColor: "#F3EDE0" }}
+        style={{ backgroundColor: "#EDF1F7" }}
       >
         <FadeIn
           as="h2"
           delay={0}
           y={40}
-          className="mx-auto mb-12 w-full max-w-6xl text-left font-black uppercase leading-none tracking-tight text-[#17130B] sm:mb-16"
+          className="mx-auto mb-12 w-full max-w-6xl text-left font-black uppercase leading-none tracking-tight text-[#05070D] sm:mb-16"
           style={{ fontSize: "clamp(2.4rem, 9vw, 110px)" }}
         >
           Tech Stack
@@ -286,7 +286,7 @@ export default function AboutPage() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-start gap-3 sm:gap-4">
           {STACK.map((tech, i) => (
             <FadeIn key={tech} delay={i * 0.05} y={16}>
-              <span className="inline-block rounded-full border border-[#17130B]/20 px-5 py-2.5 text-sm font-medium uppercase tracking-wider text-[#17130B] transition-colors hover:bg-[#17130B] hover:text-white sm:text-base">
+              <span className="inline-block rounded-full border border-[#05070D]/20 px-5 py-2.5 text-sm font-medium uppercase tracking-wider text-[#05070D] transition-colors hover:bg-[#05070D] hover:text-white sm:text-base">
                 {tech}
               </span>
             </FadeIn>
@@ -301,14 +301,14 @@ export default function AboutPage() {
               delay={i * 0.08}
               y={30}
               className="flex items-start gap-5"
-              style={{ borderTop: "1px solid rgba(23, 19, 11, 0.18)", paddingTop: "1.75rem" }}
+              style={{ borderTop: "1px solid rgba(5, 7, 13, 0.18)", paddingTop: "1.75rem" }}
             >
-              <span className="shrink-0 font-black leading-none text-[#17130B]" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
+              <span className="shrink-0 font-black leading-none text-[#05070D]" style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}>
                 {value.number}
               </span>
               <div className="flex flex-col gap-2 pt-1">
-                <h3 className="text-lg font-medium uppercase leading-tight text-[#17130B] sm:text-xl">{value.title}</h3>
-                <p className="font-light leading-relaxed text-[#17130B]" style={{ opacity: 0.6 }}>
+                <h3 className="text-lg font-medium uppercase leading-tight text-[#05070D] sm:text-xl">{value.title}</h3>
+                <p className="font-light leading-relaxed text-[#05070D]" style={{ opacity: 0.6 }}>
                   {value.text}
                 </p>
               </div>
@@ -321,7 +321,7 @@ export default function AboutPage() {
           as="h2"
           delay={0}
           y={40}
-          className="mx-auto mb-12 mt-24 w-full max-w-6xl text-left font-black uppercase leading-none tracking-tight text-[#17130B] sm:mt-28 sm:mb-16"
+          className="mx-auto mb-12 mt-24 w-full max-w-6xl text-left font-black uppercase leading-none tracking-tight text-[#05070D] sm:mt-28 sm:mb-16"
           style={{ fontSize: "clamp(2.4rem, 9vw, 110px)" }}
         >
           What I Do
@@ -335,16 +335,16 @@ export default function AboutPage() {
               y={24}
               className="flex flex-col gap-2 py-7 sm:flex-row sm:items-baseline sm:gap-10 sm:py-9"
               style={{
-                borderTop: i === 0 ? "1px solid rgba(23, 19, 11, 0.18)" : undefined,
-                borderBottom: "1px solid rgba(23, 19, 11, 0.18)",
+                borderTop: i === 0 ? "1px solid rgba(5, 7, 13, 0.18)" : undefined,
+                borderBottom: "1px solid rgba(5, 7, 13, 0.18)",
               }}
             >
-              <span className="shrink-0 font-black leading-none text-[#17130B]" style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)" }}>
+              <span className="shrink-0 font-black leading-none text-[#05070D]" style={{ fontSize: "clamp(1.6rem, 4vw, 2.6rem)" }}>
                 {String(i + 1).padStart(2, "0")}
               </span>
               <div className="flex flex-col gap-2">
-                <h3 className="text-lg font-medium uppercase leading-tight text-[#17130B] sm:text-2xl">{service.name}</h3>
-                <p className="max-w-2xl font-light leading-relaxed text-[#17130B]" style={{ opacity: 0.6 }}>
+                <h3 className="text-lg font-medium uppercase leading-tight text-[#05070D] sm:text-2xl">{service.name}</h3>
+                <p className="max-w-2xl font-light leading-relaxed text-[#05070D]" style={{ opacity: 0.6 }}>
                   {service.text}
                 </p>
               </div>
@@ -354,7 +354,7 @@ export default function AboutPage() {
       </section>
 
       {/* FEATURED WORK */}
-      <section className="px-5 py-20 sm:px-8 md:px-10 md:py-24" style={{ backgroundColor: "#17130B" }}>
+      <section className="px-5 py-20 sm:px-8 md:px-10 md:py-24" style={{ backgroundColor: "#05070D" }}>
         <FadeIn
           as="h2"
           delay={0}
@@ -371,19 +371,19 @@ export default function AboutPage() {
               key={project.name}
               delay={(i % 3) * 0.08}
               y={30}
-              className={`flex flex-col overflow-hidden rounded-3xl border-2 border-[#F3EDE0] sm:rounded-[32px] ${i === 0 ? "lg:col-span-2" : ""}`}
+              className={`flex flex-col overflow-hidden rounded-3xl border-2 border-[#E9EDF5] sm:rounded-[32px] ${i === 0 ? "lg:col-span-2" : ""}`}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={project.image} alt={project.name} loading="lazy" className={`w-full object-cover object-top ${i === 0 ? "aspect-[16/10] lg:aspect-[21/9]" : "aspect-[16/10]"}`} />
               <div className="flex flex-1 flex-col gap-3 p-6">
-                <p className="text-[11px] font-light uppercase tracking-widest text-[#F3EDE0]/60">{project.category}</p>
-                <h3 className="text-lg font-medium uppercase leading-tight text-[#F3EDE0]">{project.name}</h3>
-                <p className="flex-1 text-sm font-light leading-relaxed text-[#F3EDE0]/70">{project.text}</p>
+                <p className="text-[11px] font-light uppercase tracking-widest text-[#E9EDF5]/60">{project.category}</p>
+                <h3 className="text-lg font-medium uppercase leading-tight text-[#E9EDF5]">{project.name}</h3>
+                <p className="flex-1 text-sm font-light leading-relaxed text-[#E9EDF5]/70">{project.text}</p>
                 <a
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-flex items-center gap-2 self-start text-xs font-medium uppercase tracking-widest text-[#F3EDE0] transition-opacity hover:opacity-70"
+                  className="mt-2 inline-flex items-center gap-2 self-start text-xs font-medium uppercase tracking-widest text-[#E9EDF5] transition-opacity hover:opacity-70"
                 >
                   Live Project
                   <ArrowUpRight size={14} />
@@ -397,7 +397,7 @@ export default function AboutPage() {
             y={30}
             className="flex flex-col items-center justify-center gap-5 rounded-3xl p-8 text-center sm:rounded-[32px]"
             style={{
-              background: "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+              background: "linear-gradient(120deg, #7C5CFF 0%, #00C2FF 55%, #00E5A0 110%)",
             }}
           >
             <p className="text-xl font-medium uppercase leading-tight text-white">Your project could be next</p>
@@ -411,8 +411,8 @@ export default function AboutPage() {
 
       {/* PROCESS + CTA — dark, matching ProjectsSection overlap */}
       <section
-        className="relative z-10 -mt-10 rounded-t-[40px] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-28"
-        style={{ backgroundColor: "#17130B" }}
+        className="section-glow relative z-10 -mt-10 rounded-t-[40px] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10 md:py-28"
+        style={{ backgroundColor: "#05070D" }}
       >
         <FadeIn
           as="h2"
@@ -430,14 +430,14 @@ export default function AboutPage() {
               key={item.step}
               delay={i * 0.06}
               y={24}
-              className="flex flex-col gap-2 border-b border-[#F3EDE0]/15 py-7 sm:flex-row sm:items-baseline sm:gap-10 sm:py-9"
-              style={{ borderTop: i === 0 ? "1px solid rgba(243, 237, 224, 0.15)" : undefined }}
+              className="flex flex-col gap-2 border-b border-[#E9EDF5]/15 py-7 sm:flex-row sm:items-baseline sm:gap-10 sm:py-9"
+              style={{ borderTop: i === 0 ? "1px solid rgba(233, 237, 245, 0.15)" : undefined }}
             >
-              <span className="font-pixel shrink-0 text-sm tracking-widest" style={{ color: "#E8490F" }}>
+              <span className="font-pixel shrink-0 text-sm tracking-widest" style={{ color: "#00C2FF" }}>
                 STEP {i + 1}
               </span>
-              <h3 className="w-56 shrink-0 text-xl font-medium uppercase text-[#F3EDE0] sm:text-2xl">{item.step}</h3>
-              <p className="max-w-2xl text-sm font-light leading-relaxed text-[#F3EDE0]/70 sm:text-base">{item.text}</p>
+              <h3 className="w-56 shrink-0 text-xl font-medium uppercase text-[#E9EDF5] sm:text-2xl">{item.step}</h3>
+              <p className="max-w-2xl text-sm font-light leading-relaxed text-[#E9EDF5]/70 sm:text-base">{item.text}</p>
             </FadeIn>
           ))}
         </div>
@@ -461,12 +461,12 @@ export default function AboutPage() {
               y={20}
               className="max-w-3xl py-7"
               style={{
-                borderTop: i === 0 ? "1px solid rgba(243, 237, 224, 0.22)" : undefined,
-                borderBottom: "1px solid rgba(243, 237, 224, 0.22)",
+                borderTop: i === 0 ? "1px solid rgba(233, 237, 245, 0.22)" : undefined,
+                borderBottom: "1px solid rgba(233, 237, 245, 0.22)",
               }}
             >
-              <h3 className="text-base font-medium uppercase tracking-wide text-[#F3EDE0] sm:text-lg">{faq.q}</h3>
-              <p className="mt-2 font-light leading-relaxed text-[#F3EDE0]/70">{faq.a}</p>
+              <h3 className="text-base font-medium uppercase tracking-wide text-[#E9EDF5] sm:text-lg">{faq.q}</h3>
+              <p className="mt-2 font-light leading-relaxed text-[#E9EDF5]/70">{faq.a}</p>
             </FadeIn>
           ))}
         </div>
@@ -476,7 +476,7 @@ export default function AboutPage() {
             as="p"
             delay={0.1}
             y={20}
-            className="max-w-md font-light text-[#F3EDE0]"
+            className="max-w-md font-light text-[#E9EDF5]"
             style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.2rem)" }}
           >
             Got a project, a role, or just want to say hi? Let&apos;s build something incredible together.
@@ -485,7 +485,7 @@ export default function AboutPage() {
             <ContactButton href="/#contact" />
             <a
               href="mailto:anjijangid8@gmail.com"
-              className="flex items-center gap-2 text-sm text-[#F3EDE0]/70 transition-colors hover:text-[#F3EDE0]"
+              className="flex items-center gap-2 text-sm text-[#E9EDF5]/70 transition-colors hover:text-[#E9EDF5]"
             >
               <Mail size={16} />
               anjijangid8@gmail.com

@@ -45,12 +45,12 @@ export function Preloader() {
       {!done && (
         <motion.div
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center px-6"
-          style={{ backgroundColor: "#17130B" }}
+          style={{ backgroundColor: "#05070D" }}
           exit={{ y: "-100%" }}
           transition={{ duration: 0.7, ease: [0.76, 0, 0.24, 1] }}
           aria-hidden="true"
         >
-          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.35em] text-[#F3EDE0]/50 sm:text-xs">
+          <p className="mb-4 text-[11px] font-medium uppercase tracking-[0.35em] text-[#E9EDF5]/50 sm:text-xs">
             Portfolio — Design &amp; Engineering
           </p>
 
@@ -76,13 +76,13 @@ export function Preloader() {
                 style={{
                   width: `${progress}%`,
                   background:
-                    "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+                    "linear-gradient(120deg, #7C5CFF 0%, #00C2FF 55%, #00E5A0 110%)",
                 }}
               />
             </div>
-            <div className="mt-3 flex items-center justify-between text-[11px] font-medium uppercase tracking-widest text-[#F3EDE0]/50">
+            <div className="mt-3 flex items-center justify-between text-[11px] font-medium uppercase tracking-widest text-[#E9EDF5]/50">
               <span>Loading</span>
-              <span className="text-[#F3EDE0]">{progress}%</span>
+              <span className="text-[#E9EDF5]">{progress}%</span>
             </div>
           </div>
         </motion.div>

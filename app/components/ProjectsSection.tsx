@@ -53,7 +53,7 @@ const PROJECTS: Project[] = [
 function ProjectCard({ project, wide }: { project: Project; wide?: boolean }) {
   return (
     <article
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#F3EDE0]/25 bg-[#221B10]"
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E9EDF5]/12 bg-[#0B101D] transition-colors duration-300 hover:border-[#00C2FF]/50"
     >
       <div className="overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -72,10 +72,10 @@ function ProjectCard({ project, wide }: { project: Project; wide?: boolean }) {
             {project.number}
           </span>
           <div>
-            <p className="text-[10px] font-light uppercase tracking-widest text-[#F3EDE0]/50 sm:text-xs">
+            <p className="text-[10px] font-light uppercase tracking-widest text-[#E9EDF5]/50 sm:text-xs">
               {project.category}
             </p>
-            <h3 className="text-base font-medium uppercase leading-tight text-[#F3EDE0] sm:text-lg">
+            <h3 className="text-base font-medium uppercase leading-tight text-[#E9EDF5] sm:text-lg">
               {project.name}
             </h3>
           </div>
@@ -90,8 +90,8 @@ export function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="relative z-10 -mt-10 rounded-t-[40px] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
-      style={{ backgroundColor: "#17130B" }}
+      className="section-glow relative z-10 -mt-10 rounded-t-[40px] px-5 py-20 sm:-mt-12 sm:rounded-t-[50px] sm:px-8 md:-mt-14 md:rounded-t-[60px] md:px-10"
+      style={{ backgroundColor: "#05070D" }}
     >
       <div className="mx-auto max-w-6xl">
         {/* Layout change: sticky stacking cards -> editorial grid with the
@@ -101,7 +101,7 @@ export function ProjectsSection() {
             <div>
               <p
                 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
-                style={{ color: "#E8490F" }}
+                style={{ color: "#00C2FF" }}
               >
                 Selected Work
               </p>
@@ -109,7 +109,7 @@ export function ProjectsSection() {
                 Projects
               </h2>
             </div>
-            <p className="max-w-xs text-sm leading-relaxed text-[#F3EDE0]/55">
+            <p className="max-w-xs text-sm leading-relaxed text-[#E9EDF5]/55">
               Real products, live in production — logistics, hiring, healthcare and AI.
             </p>
           </div>

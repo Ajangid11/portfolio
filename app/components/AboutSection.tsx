@@ -15,8 +15,8 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden px-5 py-20 sm:px-6 sm:py-24 md:px-10 lg:px-14"
-      style={{ backgroundColor: "#17130B" }}
+      className="section-glow relative overflow-hidden px-5 py-20 sm:px-6 sm:py-24 md:px-10 lg:px-14"
+      style={{ backgroundColor: "#05070D" }}
     >
       {/* Layout change: two columns — sticky heading left, statement +
           stats right (was a single centered column with corner decor). */}
@@ -25,7 +25,7 @@ export function AboutSection() {
           <FadeIn>
             <p
               className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
-              style={{ color: "#E8490F" }}
+              style={{ color: "#00C2FF" }}
             >
               About Me
             </p>
@@ -46,15 +46,15 @@ export function AboutSection() {
           <AnimatedText
             text="I'm Anjali Jangid, a full-stack developer with 2+ years of experience building web products end-to-end. Based in India, I work with React, Next.js, Node.js and MongoDB — shipping everything from logistics platforms to healthcare apps. I turn ideas into beautifully engineered digital experiences, one component at a time."
             className="text-xl font-medium leading-[1.45] sm:text-2xl lg:text-[28px]"
-            style={{ color: "#F3EDE0" }}
+            style={{ color: "#E9EDF5" }}
           />
 
           <FadeIn delay={0.15}>
-            <div className="mt-10 grid grid-cols-3 divide-x divide-[#F3EDE0]/15 border-y border-[#F3EDE0]/15 py-6">
+            <div className="mt-10 grid grid-cols-3 divide-x divide-[#E9EDF5]/15 border-y border-[#E9EDF5]/15 py-6">
               {STATS.map((s) => (
                 <div key={s.label} className="px-4 first:pl-0 sm:px-6">
                   <p className="hero-heading text-3xl font-bold sm:text-4xl">{s.value}</p>
-                  <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-[#F3EDE0]/50 sm:text-[11px]">
+                  <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-[#E9EDF5]/50 sm:text-[11px]">
                     {s.label}
                   </p>
                 </div>

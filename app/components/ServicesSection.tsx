@@ -32,7 +32,7 @@ export function ServicesSection() {
     <section
       id="services"
       className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 lg:px-14"
-      style={{ backgroundColor: "#F3EDE0" }}
+      style={{ backgroundColor: "#EDF1F7" }}
     >
       <div className="mx-auto max-w-6xl">
         {/* Left-aligned header row — was a centered hero heading */}
@@ -41,18 +41,18 @@ export function ServicesSection() {
             <div>
               <p
                 className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
-                style={{ color: "#E8490F" }}
+                style={{ color: "#00C2FF" }}
               >
                 What I Do
               </p>
               <h2
                 className="text-4xl font-bold uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl"
-                style={{ color: "#17130B" }}
+                style={{ color: "#05070D" }}
               >
                 Services
               </h2>
             </div>
-            <p className="max-w-xs text-sm leading-relaxed" style={{ color: "rgba(23,19,11,0.6)" }}>
+            <p className="max-w-xs text-sm leading-relaxed" style={{ color: "rgba(5,7,13,0.6)" }}>
               Everything a product needs to go from idea to launch — under one roof.
             </p>
           </div>
@@ -63,19 +63,19 @@ export function ServicesSection() {
         <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
           {SERVICES.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.06} className="h-full">
-              <article className="h-full rounded-3xl border border-[rgba(23,19,11,0.18)] bg-white/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/70 sm:p-9">
-                <p className="font-pixel text-sm tracking-widest" style={{ color: "#E8490F" }}>
+              <article className="h-full rounded-3xl border border-[rgba(5,7,13,0.18)] bg-white/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/70 sm:p-9">
+                <p className="font-pixel text-sm tracking-widest" style={{ color: "#00C2FF" }}>
                   {String(i + 1).padStart(2, "0")}
                 </p>
                 <h3
                   className="mt-4 text-xl font-bold uppercase tracking-tight sm:text-2xl"
-                  style={{ color: "#17130B" }}
+                  style={{ color: "#05070D" }}
                 >
                   {s.title}
                 </h3>
                 <p
                   className="mt-3 max-w-md text-sm leading-relaxed sm:text-[15px]"
-                  style={{ color: "rgba(23,19,11,0.62)" }}
+                  style={{ color: "rgba(5,7,13,0.66)" }}
                 >
                   {s.desc}
                 </p>
@@ -89,7 +89,7 @@ export function ServicesSection() {
               className="group flex h-full min-h-[190px] flex-col justify-between rounded-3xl p-7 text-white transition-transform duration-300 hover:-translate-y-1 sm:p-9"
               style={{
                 background:
-                  "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+                  "linear-gradient(120deg, #7C5CFF 0%, #00C2FF 55%, #00E5A0 110%)",
               }}
             >
               <p className="font-pixel text-sm uppercase tracking-widest text-white/80">

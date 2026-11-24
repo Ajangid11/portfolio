@@ -62,7 +62,7 @@ export function LandingHero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(23,19,11,0.62) 0%, rgba(23,19,11,0.12) 42%, rgba(23,19,11,0.78) 100%)",
+            "linear-gradient(180deg, rgba(5,7,13,0.66) 0%, rgba(5,7,13,0.15) 42%, rgba(5,7,13,0.82) 100%)",
         }}
       />
 
@@ -98,7 +98,7 @@ export function LandingHero() {
             with the details moved into the bottom info bar. */}
         <div className="flex flex-1 flex-col items-center justify-center py-16 text-center">
           <p className="mb-5 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.3em] text-white/70 sm:text-xs">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#E8490F" }} />
+            <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#00C2FF" }} />
             Anjali Jangid — Full-Stack Developer, India
           </p>
 
@@ -107,12 +107,12 @@ export function LandingHero() {
             style={{ fontSize: "clamp(2.2rem, 6.5vw, 5.2rem)" }}
           >
             I build{" "}
-            <span className="font-pixel inline-block align-baseline text-[1.15em] leading-none">
+            <span className="font-pixel aurora-text inline-block align-baseline text-[1.15em] leading-none">
               reliable
             </span>
             <br />
             web products that{" "}
-            <span className="font-pixel inline-block align-baseline text-[1.15em] leading-none">
+            <span className="font-pixel aurora-text inline-block align-baseline text-[1.15em] leading-none">
               perform
             </span>
           </h1>
@@ -128,10 +128,10 @@ export function LandingHero() {
               className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white transition-opacity hover:opacity-90"
               style={{
                 background:
-                  "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+                  "linear-gradient(120deg, #7C5CFF 0%, #00C2FF 55%, #00E5A0 110%)",
                 boxShadow:
-                  "0px 6px 16px rgba(232, 73, 15, 0.35), 4px 4px 12px rgba(120, 40, 0, 0.5) inset",
-                outline: "2px solid #F3EDE0",
+                  "0px 8px 24px rgba(0, 194, 255, 0.35), 4px 4px 12px rgba(124, 92, 255, 0.45) inset",
+                outline: "2px solid #E9EDF5",
                 outlineOffset: "-3px",
               }}
             >
@@ -163,7 +163,7 @@ export function LandingHero() {
           </div>
           <div className="flex items-center justify-between pb-5 text-[11px] text-white/50">
             <p>
-              <a href="mailto:anjijangid8@gmail.com" className="text-orange-400 transition-colors hover:text-orange-300">
+              <a href="mailto:anjijangid8@gmail.com" className="text-cyan-300 transition-colors hover:text-cyan-200">
                 Schedule a call
               </a>{" "}
               — anjijangid8@gmail.com
