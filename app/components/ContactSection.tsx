@@ -56,39 +56,75 @@ export function ContactSection() {
   };
 
   const inputClass =
-    "rounded-xl border border-[#D7E2EA]/25 bg-transparent px-4 py-3 text-sm text-[#D7E2EA] outline-none placeholder:text-[#D7E2EA]/40 focus:border-[#D7E2EA]/60";
+    "rounded-xl border border-[#F3EDE0]/25 bg-transparent px-4 py-3 text-sm text-[#F3EDE0] outline-none placeholder:text-[#F3EDE0]/40 focus:border-[#F3EDE0]/60";
 
   return (
     <section
       id="contact"
       className="relative z-20 px-5 py-20 sm:px-8 md:px-10 md:py-28"
-      style={{ backgroundColor: "#0C0C0C" }}
+      style={{ backgroundColor: "#17130B" }}
     >
-      {/* Heading lives outside the max-w-3xl column — at 160px it needs the full width. */}
-      <FadeIn
-        as="h2"
-        delay={0}
-        y={40}
-        className="hero-heading text-center font-black uppercase leading-none tracking-tight"
-        style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
-      >
-        Let&apos;s Talk
-      </FadeIn>
+      {/* Layout change: centered single column -> two columns.
+          Left: heading, pitch and direct contact links. Right: the form
+          inside a bordered card. */}
+      <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <FadeIn>
+            <p
+              className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
+              style={{ color: "#E8490F" }}
+            >
+              Contact
+            </p>
+            <h2
+              className="hero-heading font-black uppercase leading-[0.95] tracking-tight"
+              style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)" }}
+            >
+              Let&apos;s
+              <br />
+              Talk
+            </h2>
+          </FadeIn>
 
-      <div className="mx-auto mt-10 flex max-w-3xl flex-col items-center gap-10 text-center sm:mt-14 sm:gap-14">
-        <FadeIn
-          as="p"
-          delay={0.1}
-          y={20}
-          className="max-w-md font-light text-[#D7E2EA]"
-          style={{ fontSize: "clamp(0.9rem, 1.6vw, 1.15rem)" }}
-        >
-          Got a project, a role, or just want to say hi? My inbox is open.
-        </FadeIn>
+          <FadeIn
+            as="p"
+            delay={0.1}
+            y={20}
+            className="mt-6 max-w-md font-light leading-relaxed text-[#F3EDE0]"
+            style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.15rem)" }}
+          >
+            Got a project, a role, or just want to say hi? My inbox is open —
+            I usually reply within a day.
+          </FadeIn>
 
-        <FadeIn delay={0.2} y={20} className="w-full">
+          <FadeIn delay={0.2} y={20} className="mt-8 flex flex-col gap-3 text-sm text-[#F3EDE0]/80">
+            <a href={`mailto:${EMAIL}`} className="flex items-center gap-3 transition-colors hover:text-[#F3EDE0]">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#F3EDE0]/30">
+                <Mail size={16} />
+              </span>
+              {EMAIL}
+            </a>
+            <a
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 transition-colors hover:text-[#F3EDE0]"
+            >
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[#F3EDE0]/30">
+                <GithubIcon size={16} />
+              </span>
+              github.com/Ajangid11
+            </a>
+            <p className="mt-2 flex items-center gap-2 text-[#F3EDE0]/60">
+              <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#E8490F" }} />
+              Open to freelance, contract or full-time
+            </p>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.2} y={20} className="rounded-3xl border border-[#F3EDE0]/20 bg-white/[0.03] p-6 sm:p-8">
           {status === "sent" ? (
-            <p className="py-10 text-lg font-medium text-[#D7E2EA]">
+            <p className="py-10 text-lg font-medium text-[#F3EDE0]">
               Message sent — I&apos;ll get back to you soon.
             </p>
           ) : (
@@ -119,17 +155,17 @@ export function ContactSection() {
                 className={`resize-none ${inputClass}`}
               />
               {status === "error" && (
-                <p className="text-sm text-red-400">Message failed to send — try again.</p>
+                <p className="text-sm text-orange-300">Message failed to send — try again.</p>
               )}
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="mt-2 inline-flex items-center justify-center self-center whitespace-nowrap rounded-full px-12 py-4 text-sm font-medium uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+                className="mt-2 inline-flex items-center justify-center self-start whitespace-nowrap rounded-full px-12 py-4 text-sm font-medium uppercase tracking-widest text-white transition-opacity hover:opacity-90 disabled:opacity-60"
                 style={{
                   background:
-                    "linear-gradient(123deg, #18011F 7%, #B600A8 37%, #7621B0 72%, #BE4C00 100%)",
-                  boxShadow: "0px 4px 4px rgba(181, 1, 167, 0.25), 4px 4px 12px #7721B1 inset",
-                  outline: "2px solid white",
+                    "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+                  boxShadow: "0px 6px 16px rgba(232, 73, 15, 0.35), 4px 4px 12px rgba(120, 40, 0, 0.5) inset",
+                  outline: "2px solid #F3EDE0",
                   outlineOffset: "-3px",
                 }}
               >
@@ -137,25 +173,6 @@ export function ContactSection() {
               </button>
             </form>
           )}
-        </FadeIn>
-
-        <FadeIn delay={0.3} y={20} className="flex items-center gap-4">
-          <a
-            href={`mailto:${EMAIL}`}
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D7E2EA]/30 text-[#D7E2EA] transition-colors hover:bg-[#D7E2EA]/10"
-            aria-label="Email"
-          >
-            <Mail size={18} />
-          </a>
-          <a
-            href={GITHUB_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-[#D7E2EA]/30 text-[#D7E2EA] transition-colors hover:bg-[#D7E2EA]/10"
-            aria-label="GitHub"
-          >
-            <GithubIcon size={18} />
-          </a>
         </FadeIn>
       </div>
     </section>

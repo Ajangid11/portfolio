@@ -26,12 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased">
       <head>
-        {/* Kanit + Inter — runtime-loaded (see note at the top of this file) */}
+        {/* Space Grotesk (display) + Inter (hero/body) — runtime-loaded (see note at the top of this file) */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         {/* eslint-disable-next-line @next/next/no-page-custom-font -- app router: a font link in the root layout loads on every page */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Kanit:wght@300;400;500;600;700;800;900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
         {/* basis33 — the pixel/bitmap face behind .font-pixel */}
@@ -40,7 +40,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-full" style={{ backgroundColor: "#0C0C0C" }}>
+      <body className="min-h-full" style={{ backgroundColor: "#17130B" }}>
         <Preloader />
         {children}
       </body>

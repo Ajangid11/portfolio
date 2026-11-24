@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Menu, X } from "lucide-react";
 
 const VIDEO_SRC =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4";
@@ -13,22 +13,22 @@ const NAV_LINKS = [
   { label: "CONTACT", href: "#contact" },
 ];
 
-const SERVICES = [
-  "Frontend Development (React / Next.js)",
-  "Backend Development (Node.js / Python)",
-  "UI/UX Design (Figma)",
-  "Databases & APIs (MongoDB / PostgreSQL)",
-  "Full-Stack Web Applications",
-  "Interactive Web (Three.js)",
-];
-
-const STATS = [
-  { name: "2+", count: "YRS EXP", nameClass: "font-bold text-lg sm:text-xl" },
-  { name: "10+", count: "PROJECTS", nameClass: "font-bold text-lg sm:text-xl" },
+const INFO_BAR = [
   {
-    name: "REACT · NODE",
-    count: "STACK",
-    nameClass: "font-bold text-[10px] sm:text-xs tracking-tight",
+    title: "What I Do",
+    body: "I build fast, reliable web products — from first line of code to production.",
+  },
+  {
+    title: "Services",
+    body: "Frontend · Backend · UI/UX · Databases & APIs · Full-Stack Apps · Interactive Web",
+  },
+  {
+    title: "Track Record",
+    body: "2+ years experience · 10+ projects · 5 shipped products",
+  },
+  {
+    title: "Availability",
+    body: "Open to freelance, contract or full-time roles.",
   },
 ];
 
@@ -47,10 +47,7 @@ export function LandingHero() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    /* min-h-screen, not h-screen: on phones the meta grid + headline + stats
-       stack taller than the viewport, and h-screen + overflow-hidden clipped
-       the footer off with no way to reach it. */
-    <section className="font-inter relative min-h-screen w-full overflow-hidden bg-black text-white">
+    <section className="font-inter relative flex min-h-screen w-full flex-col overflow-hidden bg-black text-white">
       <video
         src={VIDEO_SRC}
         autoPlay
@@ -58,6 +55,15 @@ export function LandingHero() {
         loop
         playsInline
         className="absolute inset-0 h-full w-full object-cover lg:scale-[1.2]"
+      />
+
+      {/* Warm espresso tint — ties the video into the redesign palette */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "linear-gradient(180deg, rgba(23,19,11,0.62) 0%, rgba(23,19,11,0.12) 42%, rgba(23,19,11,0.78) 100%)",
+        }}
       />
 
       <div className="relative z-10 flex min-h-screen flex-col px-5 sm:px-6 md:px-10 lg:px-14">
@@ -87,114 +93,84 @@ export function LandingHero() {
           </button>
         </nav>
 
-        {/* FOUR-COLUMN META GRID */}
-        <div className="mt-4 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
-          <div>
-            <h2 className="text-lg leading-tight tracking-wide md:text-xl">
-              <span className="font-normal">ANJALI</span>
-              <br />
-              <span className="font-pixel text-2xl md:text-3xl">JANGID</span>
-            </h2>
-            <p className="mt-3 text-[10px] text-white/50">*</p>
-            <p className="font-pixel mt-1 text-xs leading-relaxed text-white/60">
-              Full-stack developer
-              <br />
-              based in India, building
-              <br />
-              products end-to-end —
-              <br />
-              from UI to deployment
-            </p>
-          </div>
+        {/* CENTERED HEADLINE — layout change: the old bottom-left headline
+            and 4-column meta grid are replaced by a centered statement
+            with the details moved into the bottom info bar. */}
+        <div className="flex flex-1 flex-col items-center justify-center py-16 text-center">
+          <p className="mb-5 flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.3em] text-white/70 sm:text-xs">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ backgroundColor: "#E8490F" }} />
+            Anjali Jangid — Full-Stack Developer, India
+          </p>
 
-          <div className="text-right lg:text-left">
-            <h2 className="text-lg leading-tight tracking-wide md:text-xl">
-              <span className="font-normal">DESIGN &amp;</span>
-              <br />
-              <span className="font-pixel text-2xl md:text-3xl">ENGINEERING</span>
-            </h2>
-          </div>
+          <h1
+            className="max-w-5xl font-normal uppercase leading-[0.95] tracking-wide"
+            style={{ fontSize: "clamp(2.2rem, 6.5vw, 5.2rem)" }}
+          >
+            I build{" "}
+            <span className="font-pixel inline-block align-baseline text-[1.15em] leading-none">
+              reliable
+            </span>
+            <br />
+            web products that{" "}
+            <span className="font-pixel inline-block align-baseline text-[1.15em] leading-none">
+              perform
+            </span>
+          </h1>
 
-          <div>
-            <p className="font-pixel mb-1.5 text-[10px] uppercase tracking-widest text-white/50 sm:mb-3 sm:text-base">
-              What I Do
-            </p>
-            <p className="max-w-[220px] text-[11px] leading-relaxed text-white/90 sm:text-sm">
-              I build fast, reliable web products — from first line of code to production
-            </p>
-          </div>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
+            Design &amp; engineering in one pair of hands — striking interfaces,
+            dependable backends, shipped end-to-end.
+          </p>
 
-          <div className="text-right lg:text-left">
-            <p className="font-pixel mb-1.5 text-[10px] uppercase tracking-widest text-white/50 sm:mb-3 sm:text-base">
-              Services
-            </p>
-            <ul className="space-y-0.5 text-[11px] leading-relaxed text-white/90 sm:text-sm">
-              {SERVICES.map((service) => (
-                <li key={service}>{service}</li>
-              ))}
-            </ul>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white transition-opacity hover:opacity-90"
+              style={{
+                background:
+                  "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+                boxShadow:
+                  "0px 6px 16px rgba(232, 73, 15, 0.35), 4px 4px 12px rgba(120, 40, 0, 0.5) inset",
+                outline: "2px solid #F3EDE0",
+                outlineOffset: "-3px",
+              }}
+            >
+              View Projects
+              <ArrowUpRight size={16} />
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-white/5 px-8 py-3.5 text-sm font-medium uppercase tracking-widest text-white backdrop-blur-sm transition-colors hover:bg-white/10"
+            >
+              Contact Me
+            </a>
           </div>
         </div>
 
-        <div className="flex-1" />
-
-        {/* BOTTOM SECTION — mt on small screens because the 0.72 line-height
-            lets the headline glyphs bleed up out of their line box. */}
-        <div className="mt-10 pb-4 sm:mt-0">
-          <div className="grid grid-cols-1 items-end gap-4 sm:gap-6 lg:grid-cols-2">
-            <h1
-              className="text-3xl font-normal uppercase tracking-wide sm:text-4xl md:text-5xl lg:text-[3.75rem] xl:text-[4.25rem]"
-              style={{ lineHeight: 0.72 }}
-            >
-              I BUILD
-              <br />
-              <span className="font-pixel inline-block align-baseline text-[1.25em] font-normal leading-none">
-                RELIABLE
-              </span>{" "}
-              WEB
-              <br />
-              PRODUCTS THAT
-              <br />
-              <span className="font-pixel inline-block align-baseline text-[1.25em] font-normal leading-none">
-                PERFORM
-              </span>
-            </h1>
-
-            <div className="flex flex-col justify-end gap-4 sm:gap-6">
-              <a
-                href="#projects"
-                className="flex items-center gap-3 self-start border border-white/30 bg-white/5 px-6 py-3 backdrop-blur-sm transition-colors hover:bg-white/10"
-              >
-                <ArrowUpRight size={14} />
-                <span className="text-sm tracking-wider">VIEW PROJECTS</span>
-              </a>
-
-              <div className="flex flex-wrap items-stretch gap-2 self-start text-sm text-white/80 sm:gap-3 lg:self-end">
-                {STATS.map((stat) => (
-                  <div
-                    key={stat.name}
-                    className="flex items-center gap-2 bg-[#0B0B0B] px-3 py-2 sm:px-4"
-                  >
-                    <span className={stat.nameClass}>{stat.name}</span>
-                    <span className="text-xs text-white/50">{stat.count}</span>
-                  </div>
-                ))}
+        {/* BOTTOM INFO BAR */}
+        <div className="border-t border-white/20">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-5 py-6 lg:grid-cols-4">
+            {INFO_BAR.map((item) => (
+              <div key={item.title}>
+                <p className="font-pixel mb-1.5 text-[10px] uppercase tracking-widest text-white/50 sm:text-xs">
+                  {item.title}
+                </p>
+                <p className="text-[11px] leading-relaxed text-white/85 sm:text-[13px]">
+                  {item.body}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
-
-          <div className="mt-4 grid grid-cols-1 gap-2 pt-4 sm:mt-5 sm:grid-cols-2 sm:gap-4">
-            <p className="text-xs text-white/60">
-              Open to freelance, contract or full-time.{" "}
-              <a
-                href="mailto:anjijangid8@gmail.com"
-                className="text-red-500 transition-colors hover:text-red-400"
-              >
+          <div className="flex items-center justify-between pb-5 text-[11px] text-white/50">
+            <p>
+              <a href="mailto:anjijangid8@gmail.com" className="text-orange-400 transition-colors hover:text-orange-300">
                 Schedule a call
-              </a>
+              </a>{" "}
+              — anjijangid8@gmail.com
             </p>
-            <p className="text-xs text-white/60 sm:text-right">
-              5 shipped projects &bull; React · Next.js · Node.js · MongoDB
+            <p className="hidden items-center gap-1.5 sm:flex">
+              Scroll
+              <ArrowDown size={12} className="animate-bounce" />
             </p>
           </div>
         </div>

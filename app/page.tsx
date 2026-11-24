@@ -7,7 +7,7 @@ import { ContactSection } from "./components/ContactSection";
 
 export default function Home() {
   return (
-    <main style={{ backgroundColor: "#0C0C0C", overflowX: "clip" }}>
+    <main style={{ backgroundColor: "#17130B", overflowX: "clip" }}>
       <LandingHero />
       <MarqueeSection />
       <AboutSection />

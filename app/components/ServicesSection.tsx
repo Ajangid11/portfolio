@@ -1,38 +1,29 @@
 "use client";
 
 import React from "react";
+import { ArrowUpRight } from "lucide-react";
 import { FadeIn } from "./FadeIn";
 
 const SERVICES = [
   {
-    number: "01",
-    name: "Frontend Development",
-    description:
-      "Building fast, accessible interfaces in React and Next.js with attention to state, performance, and pixel-level detail.",
+    title: "Frontend Development",
+    desc: "Building fast, accessible interfaces in React and Next.js with attention to state, performance, and pixel-level detail.",
   },
   {
-    number: "02",
-    name: "Backend Development",
-    description:
-      "APIs and data layers with Node.js, Express, MongoDB and PostgreSQL — authentication, workflows, and everything in between.",
+    title: "Backend Development",
+    desc: "APIs and data layers with Node.js, Express, MongoDB and PostgreSQL — authentication, workflows, and everything in between.",
   },
   {
-    number: "03",
-    name: "UI/UX Design",
-    description:
-      "Designing in Figma and shipping it faithfully in code, from wireframes to a cohesive, memorable product experience.",
+    title: "UI/UX Design",
+    desc: "Designing in Figma and shipping it faithfully in code, from wireframes to a cohesive, memorable product experience.",
   },
   {
-    number: "04",
-    name: "Interactive Web",
-    description:
-      "Motion, scroll-driven storytelling, and Three.js scenes that turn an ordinary page into something people remember.",
+    title: "Interactive Web",
+    desc: "Motion, scroll-driven storytelling, and Three.js scenes that turn an ordinary page into something people remember.",
   },
   {
-    number: "05",
-    name: "Full-Stack Delivery",
-    description:
-      "End-to-end ownership: architecture, build, and deploy — a working product shipped rather than a handoff document.",
+    title: "End-to-End Products",
+    desc: "One accountable partner from concept to launch — design, frontend, backend, deployment and iteration, all in-house.",
   },
 ];
 
@@ -40,54 +31,80 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="relative z-0 rounded-t-[40px] px-5 py-20 sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
-      style={{ backgroundColor: "#FFFFFF" }}
+      className="px-5 py-20 sm:px-6 sm:py-24 md:px-10 lg:px-14"
+      style={{ backgroundColor: "#F3EDE0" }}
     >
-      <FadeIn
-        as="h2"
-        delay={0}
-        y={40}
-        className="mb-16 text-center font-black uppercase leading-none tracking-tight text-[#0C0C0C] sm:mb-20 md:mb-28"
-        style={{ fontSize: "clamp(3rem, 12vw, 160px)" }}
-      >
-        Services
-      </FadeIn>
-
-      <div className="mx-auto max-w-5xl">
-        {SERVICES.map((service, i) => (
-          <FadeIn
-            key={service.number}
-            delay={i * 0.1}
-            y={30}
-            className="flex items-start gap-5 py-8 sm:gap-8 sm:py-10 md:gap-12 md:py-12"
-            style={{
-              borderTop: i === 0 ? "1px solid rgba(12, 12, 12, 0.15)" : undefined,
-              borderBottom: "1px solid rgba(12, 12, 12, 0.15)",
-            }}
-          >
-            <span
-              className="shrink-0 font-black leading-none text-[#0C0C0C]"
-              style={{ fontSize: "clamp(3rem, 10vw, 140px)" }}
-            >
-              {service.number}
-            </span>
-
-            <div className="flex flex-col gap-3 pt-1 sm:gap-4">
-              <h3
-                className="font-medium uppercase leading-tight text-[#0C0C0C]"
-                style={{ fontSize: "clamp(1rem, 2.2vw, 2.1rem)" }}
-              >
-                {service.name}
-              </h3>
+      <div className="mx-auto max-w-6xl">
+        {/* Left-aligned header row — was a centered hero heading */}
+        <FadeIn>
+          <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
+            <div>
               <p
-                className="max-w-2xl font-light leading-relaxed text-[#0C0C0C]"
-                style={{ fontSize: "clamp(0.85rem, 1.6vw, 1.25rem)", opacity: 0.6 }}
+                className="mb-3 text-[11px] font-semibold uppercase tracking-[0.3em]"
+                style={{ color: "#E8490F" }}
               >
-                {service.description}
+                What I Do
               </p>
+              <h2
+                className="text-4xl font-bold uppercase leading-none tracking-tight sm:text-5xl lg:text-6xl"
+                style={{ color: "#17130B" }}
+              >
+                Services
+              </h2>
             </div>
+            <p className="max-w-xs text-sm leading-relaxed" style={{ color: "rgba(23,19,11,0.6)" }}>
+              Everything a product needs to go from idea to launch — under one roof.
+            </p>
+          </div>
+        </FadeIn>
+
+        {/* Layout change: full-width numbered rows -> two-column card grid,
+            ending with a gradient "start a project" call-to-action card. */}
+        <div className="grid gap-4 sm:gap-5 md:grid-cols-2">
+          {SERVICES.map((s, i) => (
+            <FadeIn key={s.title} delay={i * 0.06} className="h-full">
+              <article className="h-full rounded-3xl border border-[rgba(23,19,11,0.18)] bg-white/40 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-white/70 sm:p-9">
+                <p className="font-pixel text-sm tracking-widest" style={{ color: "#E8490F" }}>
+                  {String(i + 1).padStart(2, "0")}
+                </p>
+                <h3
+                  className="mt-4 text-xl font-bold uppercase tracking-tight sm:text-2xl"
+                  style={{ color: "#17130B" }}
+                >
+                  {s.title}
+                </h3>
+                <p
+                  className="mt-3 max-w-md text-sm leading-relaxed sm:text-[15px]"
+                  style={{ color: "rgba(23,19,11,0.62)" }}
+                >
+                  {s.desc}
+                </p>
+              </article>
+            </FadeIn>
+          ))}
+
+          <FadeIn delay={SERVICES.length * 0.06} className="h-full">
+            <a
+              href="#contact"
+              className="group flex h-full min-h-[190px] flex-col justify-between rounded-3xl p-7 text-white transition-transform duration-300 hover:-translate-y-1 sm:p-9"
+              style={{
+                background:
+                  "linear-gradient(123deg, #3D0C00 0%, #E8490F 38%, #F07D13 72%, #FFB03A 100%)",
+              }}
+            >
+              <p className="font-pixel text-sm uppercase tracking-widest text-white/80">
+                Your project here
+              </p>
+              <p className="mt-6 flex items-center gap-2 text-xl font-bold uppercase tracking-tight sm:text-2xl">
+                Start a project
+                <ArrowUpRight
+                  size={22}
+                  className="transition-transform group-hover:-translate-y-1 group-hover:translate-x-1"
+                />
+              </p>
+            </a>
           </FadeIn>
-        ))}
+        </div>
       </div>
     </section>
   );
