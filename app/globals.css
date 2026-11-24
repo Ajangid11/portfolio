@@ -8,6 +8,14 @@
   --font-sans: var(--font-kanit), sans-serif;
 }
 
+/* Font stacks behind the variables the layout used to get from
+   next/font/google. The families themselves are <link>-loaded in
+   layout.tsx so builds never download fonts (see the note there). */
+:root {
+  --font-kanit: "Kanit", ui-sans-serif, system-ui, sans-serif;
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Keep the reset inside the base layer — unlayered rules would override
    Tailwind's layered utilities (mx-auto, px-*, mt-*) and break centering. */
 @layer base {
