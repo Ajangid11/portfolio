@@ -7,7 +7,7 @@ const VIDEO_SRC =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260725_114042_d2ed2a89-f2fa-449b-9609-da456344257b.mp4";
 
 const NAV_LINKS = [
-  { label: "ABOUT", href: "#about" },
+  { label: "ABOUT", href: "/about" },
   { label: "SERVICES", href: "#services" },
   { label: "PROJECTS", href: "#projects" },
   { label: "CONTACT", href: "#contact" },
