@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Preloader } from "./components/Preloader";
+import { ChatBot } from "./components/ChatBot";
 
 /*
  * Fonts are loaded with plain <link> tags (below), NOT next/font/google.
@@ -43,6 +44,7 @@ export default function RootLayout({
       <body className="min-h-full" style={{ backgroundColor: "#05070D" }}>
         <Preloader />
         {children}
+        <ChatBot />
       </body>
     </html>
   );
